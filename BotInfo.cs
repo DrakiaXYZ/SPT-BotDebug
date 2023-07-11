@@ -6,8 +6,7 @@ using UnityEngine;
 using ActorDataStruct = GStruct15;
 using BotDataStruct = GStruct14;
 using HealthDataStruct = GStruct13;
-using EnemyInfoClass = GClass475;
-using static DrakiaXYZ.BotDebug.Components.BotDebugComponent;
+using EnemyInfoClass = GClass476;
 using DrakiaXYZ.BigBrain.Brains;
 
 namespace DrakiaXYZ.BotDebug
@@ -77,7 +76,7 @@ namespace DrakiaXYZ.BotDebug
             stringBuilder.Clear();
             stringBuilder.AppendLabeledValue("Bot (Brain)", $"{botData.Name} ({botData.StrategyName})", Color.white, botNameColor, false);
             stringBuilder.AppendLabeledValue("Layer", botData.LayerName, Color.white, Color.white, true);
-            stringBuilder.AppendLabeledValue("Nickname", actorDataStruct.PlayerOwner?.Profile.Nickname, Color.white, Color.white, true);
+            stringBuilder.AppendLabeledValue("Nickname", actorDataStruct.PlayerOwner?.Nickname, Color.white, Color.white, true);
             if (string.IsNullOrEmpty(botData.CustomData))
             {
                 stringBuilder.AppendLine("No Custom Data");
@@ -115,7 +114,7 @@ namespace DrakiaXYZ.BotDebug
             string data;
             try
             {
-                data = actorDataStruct.PlayerOwner.MovementContext.CurrentState.Name.ToString();
+                data = actorDataStruct.PlayerOwner.CurrentStataName.ToString();
             }
             catch (Exception)
             {
@@ -143,7 +142,7 @@ namespace DrakiaXYZ.BotDebug
 
             if (actorDataStruct.PlayerOwner != null)
             {
-                int dist = Mathf.RoundToInt((actorDataStruct.PlayerOwner.Transform.position - localPlayer.Transform.position).magnitude);
+                int dist = Mathf.RoundToInt((actorDataStruct.PlayerOwner.iPlayer.Position - localPlayer.Transform.position).magnitude);
                 stringBuilder.AppendLabeledValue("Dist", $"{dist}", Color.white, Color.white, true);
             }
 
@@ -159,7 +158,7 @@ namespace DrakiaXYZ.BotDebug
             {
                 if (actorDataStruct.PlayerOwner != null)
                 {
-                    Player.FirearmController firearmController = actorDataStruct.PlayerOwner.GetPlayer.HandsController as Player.FirearmController;
+                    Player.FirearmController firearmController = actorDataStruct.PlayerOwner.AIData.BotOwner.GetPlayer.HandsController as Player.FirearmController;
                     if (firearmController != null)
                     {
                         int chamberAmmoCount = firearmController.Item.ChamberAmmoCount;
@@ -190,7 +189,7 @@ namespace DrakiaXYZ.BotDebug
                 }
                 else
                 {
-                    stringBuilder.AppendLabeledValue("GoalEnemy", $"{goalEnemy?.Person?.GetPlayer?.Profile?.Nickname}", Color.white, Color.white, true);
+                    stringBuilder.AppendLabeledValue("GoalEnemy", $"{goalEnemy?.Nickname}", Color.white, Color.white, true);
                 }
             }
 

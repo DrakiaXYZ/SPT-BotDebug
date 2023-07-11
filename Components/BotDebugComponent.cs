@@ -92,7 +92,7 @@ namespace DrakiaXYZ.BotDebug.Components
 #endif
 
             // Add any missing bots to the dictionary, pulling the debug data from BSG classes
-            foreach (Player player in gameWorld.AllPlayers)
+            foreach (Player player in gameWorld.RegisteredPlayers)
             {
                 var data = botSpawner.BotDebugData(localPlayer, player.ProfileId);
                 if (!botMap.TryGetValue(player.ProfileId, out var botData))
@@ -161,7 +161,7 @@ namespace DrakiaXYZ.BotDebug.Components
                 }
 
                 // Only draw the bot data if it's visible on screen
-                Vector3 aboveBotHeadPos = botData.PlayerOwner.Transform.position + (Vector3.up * 1.5f);
+                Vector3 aboveBotHeadPos = botData.PlayerOwner.iPlayer.Position + (Vector3.up * 1.5f);
                 Vector3 screenPos = Camera.main.WorldToScreenPoint(aboveBotHeadPos);
                 if (screenPos.z > 0)
                 {
@@ -178,7 +178,7 @@ namespace DrakiaXYZ.BotDebug.Components
                         }
                     }
 
-                    int dist = Mathf.RoundToInt((botData.PlayerOwner.Transform.position - localPlayer.Transform.position).magnitude);
+                    int dist = Mathf.RoundToInt((botData.PlayerOwner.iPlayer.Position - localPlayer.Transform.position).magnitude);
                     if (bot.Value.GuiContent.text.Length > 0 && dist < Settings.MaxDrawDistance.Value)
                     {
                         Vector2 guiSize = guiStyle.CalcSize(bot.Value.GuiContent);
