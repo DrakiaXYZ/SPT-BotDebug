@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Reflection;
-using Aki.Reflection.Patching;
+using SPT.Reflection.Patching;
 using BepInEx;
 using DrakiaXYZ.BotDebug.Components;
 using DrakiaXYZ.BotDebug.Helpers;
 using DrakiaXYZ.BotDebug.VersionChecker;
 using EFT;
-using HarmonyLib;
-using UnityEngine;
 
 namespace DrakiaXYZ.BotDebug
 {
-    [BepInPlugin("xyz.drakia.botdebug", "DrakiaXYZ-BotDebug", "1.3.0")]
+    [BepInPlugin("xyz.drakia.botdebug", "DrakiaXYZ-BotDebug", "1.4.0")]
 #if !STANDALONE
-    [BepInDependency("com.spt-aki.core", "3.8.0")]
-    [BepInDependency("xyz.drakia.bigbrain", "0.4.0")]
+    [BepInDependency("com.SPT.core", "3.9.0")]
+    [BepInDependency("xyz.drakia.bigbrain", "1.0.0")]
 #endif
     public class BotDebugPlugin : BaseUnityPlugin
     {

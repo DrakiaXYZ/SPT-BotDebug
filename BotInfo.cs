@@ -4,7 +4,6 @@ using System;
 using System.Text;
 using UnityEngine;
 using DrakiaXYZ.BigBrain.Brains;
-using System.Reflection;
 using DrakiaXYZ.BotDebug.Helpers;
 
 namespace DrakiaXYZ.BotDebug
@@ -365,7 +364,7 @@ namespace DrakiaXYZ.BotDebug
                 {
                     AppendLabeledValue(stringBuilder, "Layer", $"{customLayer.GetName()}", Color.white, Color.white, true);
                 }
-                else if (activeLayer is BaseLogicLayerClass logicLayer)
+                else if (activeLayer is BaseLogicLayerAbstractClass logicLayer)
                 {
                     AppendLabeledValue(stringBuilder, "Layer", $"{logicLayer.Name()}", Color.grey, Color.grey, true);
                 }
