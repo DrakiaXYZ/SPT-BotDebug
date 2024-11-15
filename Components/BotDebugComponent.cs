@@ -149,7 +149,7 @@ namespace DrakiaXYZ.BotDebug.Components
                 var botData = bot.Value.Data;
                 if (!botData.InitedBotData) continue;
                 var playerOwner = FieldHelper.PlayerOwnerField.GetValue(botData);
-                AIData aiData = FieldHelper.Property<AIData>(playerOwner, "AIData");
+                IAIData aiData = FieldHelper.Property<IAIData>(playerOwner, "AIData");
 
                 if (aiData?.BotOwner == null)
                 {

@@ -27,7 +27,7 @@ namespace DrakiaXYZ.BotDebug
             if (playerOwner != null)
             {
                 botNameColor = Color.green;
-                AIData aiData = FieldHelper.Property<AIData>(playerOwner, "AIData");
+                IAIData aiData = FieldHelper.Property<IAIData>(playerOwner, "AIData");
                 foreach (var enemyInfo in aiData.BotOwner.EnemiesController.EnemyInfos.Values)
                 {
                     if (enemyInfo.ProfileId == localPlayer.ProfileId)
@@ -194,7 +194,7 @@ namespace DrakiaXYZ.BotDebug
             {
                 if (playerOwner != null)
                 {
-                    AIData aiData = FieldHelper.Property<AIData>(playerOwner, "AIData");
+                    IAIData aiData = FieldHelper.Property<IAIData>(playerOwner, "AIData");
                     BotOwner botOwner = aiData.BotOwner;
                     Player.FirearmController firearmController = botOwner.GetPlayer.HandsController as Player.FirearmController;
                     if (firearmController != null)
@@ -226,7 +226,7 @@ namespace DrakiaXYZ.BotDebug
 
             if (playerOwner != null)
             {
-                AIData aiData = FieldHelper.Property<AIData>(playerOwner, "AIData");
+                IAIData aiData = FieldHelper.Property<IAIData>(playerOwner, "AIData");
                 var goalEnemy = aiData.BotOwner.Memory.GoalEnemy;
                 if (goalEnemy?.Person?.IsAI == true)
                 {
