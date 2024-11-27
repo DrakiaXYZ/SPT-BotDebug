@@ -9,6 +9,8 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
+		Package|Any CPU = Package|Any CPU
+		Package|x64 = Package|x64
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Standalone|Any CPU = Standalone|Any CPU
@@ -19,6 +21,10 @@ Global
 		{30D38A81-B688-474D-A40A-47BFC63BFE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30D38A81-B688-474D-A40A-47BFC63BFE69}.Debug|x64.ActiveCfg = Debug|x64
 		{30D38A81-B688-474D-A40A-47BFC63BFE69}.Debug|x64.Build.0 = Debug|x64
+		{30D38A81-B688-474D-A40A-47BFC63BFE69}.Package|Any CPU.ActiveCfg = Package|Any CPU
+		{30D38A81-B688-474D-A40A-47BFC63BFE69}.Package|Any CPU.Build.0 = Package|Any CPU
+		{30D38A81-B688-474D-A40A-47BFC63BFE69}.Package|x64.ActiveCfg = Package|x64
+		{30D38A81-B688-474D-A40A-47BFC63BFE69}.Package|x64.Build.0 = Package|x64
 		{30D38A81-B688-474D-A40A-47BFC63BFE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30D38A81-B688-474D-A40A-47BFC63BFE69}.Release|Any CPU.Build.0 = Release|Any CPU
 		{30D38A81-B688-474D-A40A-47BFC63BFE69}.Release|x64.ActiveCfg = Release|x64

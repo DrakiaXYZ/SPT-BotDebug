@@ -9,10 +9,10 @@ using EFT;
 
 namespace DrakiaXYZ.BotDebug
 {
-    [BepInPlugin("xyz.drakia.botdebug", "DrakiaXYZ-BotDebug", "1.4.0")]
+    [BepInPlugin("xyz.drakia.botdebug", "DrakiaXYZ-BotDebug", "1.5.0")]
 #if !STANDALONE
-    [BepInDependency("com.SPT.core", "3.9.0")]
-    [BepInDependency("xyz.drakia.bigbrain", "1.0.0")]
+    [BepInDependency("com.SPT.core", "3.10.0")]
+    [BepInDependency("xyz.drakia.bigbrain", "1.2.0")]
 #endif
     public class BotDebugPlugin : BaseUnityPlugin
     {
