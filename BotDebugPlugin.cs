@@ -9,14 +9,16 @@ using EFT;
 
 namespace DrakiaXYZ.BotDebug
 {
-    [BepInPlugin("xyz.drakia.botdebug", "DrakiaXYZ-BotDebug", "1.5.0")]
+    [BepInPlugin("xyz.drakia.botdebug", "DrakiaXYZ-BotDebug", "1.6.0")]
 #if !STANDALONE
+#if !DEBUG
     [BepInDependency("com.SPT.core", "3.10.0")]
-    [BepInDependency("xyz.drakia.bigbrain", "1.2.0")]
+#endif
+    [BepInDependency("xyz.drakia.bigbrain", "1.3.0")]
 #endif
     public class BotDebugPlugin : BaseUnityPlugin
     {
-        private void Awake()
+        public void Awake()
         {
 #if !STANDALONE
             if (!TarkovVersion.CheckEftVersion(Logger, Info, Config))

@@ -362,7 +362,7 @@ namespace DrakiaXYZ.BotDebug
             {
                 if (activeLayer is CustomLayer customLayer)
                 {
-                    AppendLabeledValue(stringBuilder, "Layer", $"{customLayer.GetName()}", Color.white, Color.white, true);
+                    AppendLabeledValue(stringBuilder, "CLayer", $"{customLayer.GetName()}", Color.white, Color.white, true);
                 }
                 else if (activeLayer is BaseLogicLayerAbstractClass logicLayer)
                 {

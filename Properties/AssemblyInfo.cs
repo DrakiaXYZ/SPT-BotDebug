@@ -20,4 +20,4 @@ using DrakiaXYZ.BotDebug.VersionChecker;
 
 [assembly: AssemblyVersion("1.5.0.0")]
 [assembly: AssemblyFileVersion("1.5.0.0")]
-[assembly: TarkovVersion(33420)]
+[assembly: TarkovVersion(35392)]
