@@ -3,8 +3,11 @@ using EFT;
 using System;
 using System.Text;
 using UnityEngine;
-using DrakiaXYZ.BigBrain.Brains;
 using DrakiaXYZ.BotDebug.Helpers;
+
+#if !STANDALONE
+using DrakiaXYZ.BigBrain.Brains;
+#endif
 
 namespace DrakiaXYZ.BotDebug
 {

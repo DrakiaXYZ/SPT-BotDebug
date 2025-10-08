@@ -4,9 +4,9 @@ $tarkovVersion = (Get-Item -Path $tarkovPath).VersionInfo.FileVersionRaw.Revisio
 Write-Host "Current version of EscapeFromTarkov.exe is: $tarkovVersion"
 
 # Update AssemblyVersion
-$assemblyPath = '{0}\..\Properties\AssemblyInfo.cs' -f $PSScriptRoot
+$versionPath = '{0}\TarkovVersion.cs' -f $PSScriptRoot
 $versionPattern = '^\[assembly: TarkovVersion\(.*\)\]'
-(Get-Content $assemblyPath) | ForEach-Object {
+(Get-Content $versionPath) | ForEach-Object {
     if ($_ -match $versionPattern){
     	$versionType = $matches[1]
         $newLine = '[assembly: TarkovVersion({0})]' -f $tarkovVersion
@@ -15,6 +15,6 @@ $versionPattern = '^\[assembly: TarkovVersion\(.*\)\]'
     } else {
         $_
     }
-} | Set-Content $assemblyPath
+} | Set-Content $versionPath
 
-Write-Host "AssemblyInfo.cs updated successfully!"
+Write-Host "TarkovVersion.cs updated successfully!"
